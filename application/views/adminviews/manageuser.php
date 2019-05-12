@@ -23,9 +23,12 @@
 </head>
 <body>
     	
-    <nav class="navbar navbar-expand-sm z-depth-1"  >
+    <nav class="navbar navbar-expand-sm z-depth-1 fixed-top"  >
 	   <a href="index.html" class="navbar-brand" style="font-size:16px;font-weight:bold;color:#EF6C00"><span style="font-size:16px;font-weight:bold;color:#6A1B9A">Bangladesh</span><img src="assets/images/logo.png" alt="logo" height="55" width="55">Police</a>
     	<ul class="navbar-nav justify-content-end w-75">
+        <li class="nav-item m-3">
+              <a class="nav-link" href="manage_officers" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage Officers</a>
+            </li>
 		    <li class="nav-item m-3">
 		      <a class="nav-link" href="manageuser" style="color:#FFA000;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage User</a>
 		    </li> 
@@ -49,41 +52,46 @@
     	
     </nav>
 
+    <section style="margin-top:120px">
+          <?php if($this->session->flashdata('successs')){ ?>
 
-    <?php if($this->session->flashdata('successs')){ ?>
-
-        <div class="w-100 m-5">
-            <div class="alert alert-success m-auto w-50 "> <?php  echo $this->session->flashdata('successs') ?> </div>
-        </div>
-
-    <?php } ?>
-
-    <?php
-
-        foreach ($userdata as $row) { ?>
-            
-
-            <div class="w-100 card container mt-5" style="border-radius:12px;">
-               <div class="row m-3">
-                   <div class="col-2">
-                       <img class="w-100" style="height:130px" src="assets/images/profile.png">
-                   </div>
-                   <div class="col-1">
-                       
-                   </div>
-                   <div class="col-6" style="padding-left:20px">
-                       <h3 id="name"><?php echo $row->name ?></h3>
-                       <h4><?php echo $row->email ?></h4>
-                       <h4><?php echo $row->phone_number ?></h4>
-                   </div>
-                   <div class="col-3">
-                       <a href="" class="btn btn-info delete_user" id="<?php echo $row->id ?>" >Edit</a>
-                       <a href="<?php echo 'admin/delete/'.$row->id ?>" class="btn btn-danger">Delete</a>
-                   </div>
-               </div>    
+            <div class="w-100 m-5">
+                <div class="alert alert-success m-auto w-50 "> <?php  echo $this->session->flashdata('successs') ?> </div>
             </div>
+
+        <?php } ?>
+
+        <?php
+
+            foreach ($userdata as $row) { ?>
+                
+
+                <div class="w-100 card container mt-5" style="border-radius:12px;">
+                   <div class="row m-3">
+                       <div class="col-2">
+                           <img class="w-100" style="height:130px" src="assets/images/profile.png">
+                       </div>
+                       <div class="col-1">
+                           
+                       </div>
+                       <div class="col-6" style="padding-left:20px">
+                           <h3 id="name"><?php echo $row->name ?></h3>
+                           <h4><?php echo $row->email ?></h4>
+                           <h4><?php echo $row->phone_number ?></h4>
+                       </div>
+                       <div class="col-3">
+                           <a href="" class="btn btn-info delete_user" id="<?php echo $row->id ?>" >Edit</a>
+                           <a href="<?php echo 'admin/delete/'.$row->id ?>" class="btn btn-danger">Delete</a>
+                       </div>
+                   </div>    
+                </div>
+        
+        <?php } ?>
+          
+   </section>
+
+
     
-    <?php } ?>
        
 
 

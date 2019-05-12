@@ -42,7 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
        echo $navbar;
     ?>
-    <section  class="d-none d-sm-block" >
+    
+    <section  class="d-none d-sm-block" style="margin-top:80px" >
+            <?php if($this->session->flashdata('result')){  ?>
+                <div class="w-100" style="margin-top:120px">
+                    <div class="alert alert-danger m-auto text-center w-50 "> <?php  echo $this->session->flashdata('result') ?> </div>
+                </div>
+            <?php } ?>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-10 col-lg-10 col-md-10" ></div>
@@ -98,16 +104,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                    <form class="form" role="form" autocomplete="off" action="user_login" id="formLogin"  method="POST">
                         <div class="form-group">
                             <a href="" class="float-right">New user?</a>
-                            <label for="uname1">Username</label>
-                            <input type="text" class="form-control form-control-lg" name="uname1" id="uname1" required="">
+                            <label for="uname1">Email</label>
+                            <input type="email" class="form-control form-control-lg" name="email" id="uname1" required="">
                             <div class="invalid-feedback">Oops, you missed this one.</div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
+                            <input type="password" name="password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
                             <div class="invalid-feedback">Enter your password too!</div>
                         </div>
                         <div class="custom-control custom-checkbox">
@@ -116,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="form-group py-4">
                             <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" name="submit">Login</button>
                         </div>
 
                     </form>

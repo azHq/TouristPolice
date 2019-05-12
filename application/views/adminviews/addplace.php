@@ -29,6 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <nav class="navbar navbar-expand-sm z-depth-1"  >
 	   <a href="index.html" class="navbar-brand" style="font-size:16px;font-weight:bold;color:#EF6C00"><span style="font-size:16px;font-weight:bold;color:#6A1B9A">Bangladesh</span><img src="assets/images/logo.png" alt="logo" height="55" width="55">Police</a>
     	<ul class="navbar-nav justify-content-end w-75">
+            <li class="nav-item m-3">
+              <a class="nav-link" href="manage_officers" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage Officers</a>
+            </li>
 		    <li class="nav-item m-3">
 		      <a class="nav-link" href="manageuser" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage User</a>
 		    </li> 
@@ -85,10 +88,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				<div class="mt-4">
     					<label style="display:block;color:green">Location*</label>
     					<select required="text" name="location" class="w-100" style="border:1px solid blue;border-radius:8px;height:37px;margin-top:-4px">
-    						<option selected="true">Dhaka</option>
-    						<option>Chittagong</option>
-    						<option>Sylhet</option>
-    						<option>Comilla</option>
+        					 <option selected="true">Dhaka</option>
+                             <option>Chittagong</option>
+                             <option>Barisal</option>
+                             <option>Khulna </option>
+                             <option>Mymensingh</option>
+                             <option>Rajshahi</option>
+                             <option>Rangpur</option>
+                             <option>Sylhet</option>
     					</select>
     				</div>
 

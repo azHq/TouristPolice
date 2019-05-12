@@ -75,8 +75,8 @@
             
         </div>
     </section>
-
-	<section class="banner-area">
+    <section class="m-5"></section>
+	<section class="banner-area m-5">
         <div class="container-fluid">
             <div class="row">
 

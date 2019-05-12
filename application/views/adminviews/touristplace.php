@@ -26,6 +26,9 @@
     <nav class="navbar navbar-expand-sm z-depth-1"  >
 	   <a href="index.html" class="navbar-brand" style="font-size:16px;font-weight:bold;color:#EF6C00"><span style="font-size:16px;font-weight:bold;color:#6A1B9A">Bangladesh</span><img src="assets/images/logo.png" alt="logo" height="55" width="55">Police</a>
     	<ul class="navbar-nav justify-content-center w-75">
+        <li class="nav-item m-3">
+              <a class="nav-link" href="manage_officers" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage Officers</a>
+        </li>
 		    <li class="nav-item m-3">
 		      <a class="nav-link" href="manageuser" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage User</a>
 		    </li> 

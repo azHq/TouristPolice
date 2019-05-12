@@ -43,6 +43,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
        echo $navbar;
     ?>
+    <section class="w-100 m-4 row">
+       <?php if($this->session->flashdata('error')){ ?>
+            <div class="w-100 m-3">
+                <div class="alert alert-success m-auto text-center w-50 "> <?php  echo $this->session->flashdata('error') ?> </div>
+            </div>
+        <?php } ?>
+        <?php if($service_info!=null){?>
+        <h3 class="m-auto pb-4 ">Your Booked Services </h3>
+        <div class="col-10 m-auto p-2 table-dark" style="border-radius:10px">
+            <table class="container table table-dark thead-light w-100 m-auto z-depth-1"  >
+                <thead style="padding:10px">
+                        <tr>
+                            <th>Id</th>
+                            <th>Area_Name</th>
+                            <th>Location</th>
+                            <th>Officer_Name</th>
+                            <th>Phone_Number</th>
+                            <th>Start_Date</th>
+                            <th>End_Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                </thead>
+                
+                <tbody>
+                    <?php
+                     $i=0;
+                     
+                     foreach ($service_info as $value) { $i++ ?>
+                        <tr> 
+                            <td><?php echo $i; ?></td>
+                            <td><?php echo $value['area_name']; ?></td>
+                            <td><?php echo $value['location']; ?></td>
+                            <td><?php echo $value['officer_name']; ?></td>
+                            <td><?php echo $value['phone_number']; ?></td>
+                            <td><?php echo $value['start_date']; ?></td>
+                            <td><?php echo $value['end_date']; ?></td>
+                            <td><a class="btn-lg btn-primary" style="color:white;font-size: 15px" href="">EDIT</a></td>
+                            <td><a class="btn-lg btn-danger" href="<?php echo 'Welcome/cancelService/'.$value['booking_id'] ?>" style="color:white;font-size: 15px">CANCEL</a></td>
+                        </tr>
+                   <?php } ?>
+                    
+                </tbody>
+            </table>
+            
+        </div>
+        <?php }?>
+       
+    </section>
+    
+
+    
     <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -51,16 +103,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                    <form class="form" role="form" autocomplete="off" action="user_login" id="formLogin"  method="POST">
                         <div class="form-group">
                             <a href="" class="float-right">New user?</a>
-                            <label for="uname1">Username</label>
-                            <input type="text" class="form-control form-control-lg" name="uname1" id="uname1" required="">
+                            <label for="uname1">Email</label>
+                            <input type="email" class="form-control form-control-lg" name="email" id="uname1" required="" autocomplete="off">
                             <div class="invalid-feedback">Oops, you missed this one.</div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
+                            <input type="password" name="password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
                             <div class="invalid-feedback">Enter your password too!</div>
                         </div>
                         <div class="custom-control custom-checkbox">
@@ -69,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="form-group py-4">
                             <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" name="submit">Login</button>
                         </div>
 
                     </form>
@@ -95,8 +147,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-lg-2 mt-5 card round" style="border-radius:12px;">
                     <p class="m-3" style="font-weight:bold;font-size:20px;color:#222;
-    text-transform: uppercase;
-    font-weight: 900;">Find Your Places Here Which Place Do You Want To Book</p>
+                        text-transform: uppercase;
+                            font-weight: 900;">Find Your Places Here Which Place Do You Want To Book</p>
                     <form>
                       <div class="form-col m-3">
                       

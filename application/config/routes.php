@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+$route['welcome_page'] = 'welcome/welcome_page';
 $route['home'] = 'welcome/home';
 $route['admin'] = 'admin/addplace';
 $route['touristplace'] = 'welcome/touristplace';
@@ -68,5 +69,33 @@ $route['newdeploy']='admin/newdeploy';
 $route['add_deploy']='admin/add_deploy';
 $route['admin/edit_deploy/add_deploy']='admin/add_deploy';
 $route['security_service']='user/add_security_service';
+$route['search_places']='user/search_places';
+$route['manage_officers']='Manage_Officers_CI/manage_officers';
+$route['add_officer']='Manage_Officers_CI/add_officer';
+$route['search_officers']='user/search_officers';
+$route['touristArea']='user/touristArea';
+$route['user_login']='user/user_login';
+$route['user_logout']='user/user_logout';
+$route['admin_signin']='admin/admin_signin';
+$route['admin_logout']='admin/admin_logout';
+$route['security_review']='user/add_security_review';
+$route['transport_management']='Transport_Management/transport_view';
+$route['transport_book']='user/transport_book';
+$route['view_blog_user']='user/view_blog';
+$route['add_blog_user']='user/add_blog';
+$route['view_blog_admin']='admin/view_blog';
+$route['add_blog_admin']='admin/add_blog';
+$route['view_FAQ']='admin/view_FAQ';
+$route['add_FAQ_answer']='admin/add_FAQ_answer';
+$route['write_FAQ']='user/write_FAQ';
+$route['add_FAQ_question']='user/add_FAQ_question';
+
+
+
+
+
+
+
+
 
 

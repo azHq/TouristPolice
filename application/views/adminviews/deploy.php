@@ -29,6 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <nav class="navbar navbar-expand-sm w-100 z-depth-1"  >
        <a href="index.html" class="navbar-brand" style="font-size:16px;font-weight:bold;color:#EF6C00"><span style="font-size:16px;font-weight:bold;color:#6A1B9A">Bangladesh</span><img src="<?php echo base_url().'assets/images/logo.png'?>" alt="logo" height="55" width="55">Police</a>
         <ul class="navbar-nav justify-content-end w-75">
+             <li class="nav-item m-3">
+              <a class="nav-link" href="manage_officers" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage Officers</a>
+            </li>
             <li class="nav-item m-3">
               <a class="nav-link" href="manageuser" style="color:green;font-weight:500px;font-size:18px;font-family:sans-serif;">Manage User</a>
             </li> 
@@ -73,9 +76,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
     
 
-    <section class="container mt-5">
+    <section class="container mt-4">
         <table class="table table-borderless">
-            <tr class="z-depth-1" style="border-radius:8px;">
+            <!--<tr class="z-depth-1" style="border-radius:8px;">
                 <th style="text-align:center;font-size:19px;font-family:sans-serif; font-weight:bold;color:#1E88E5" class="align-middle">Profile</th>
                 <th style="text-align:center;font-size:19px;font-family:sans-serif; font-weight:bold;color:#1E88E5" class="align-middle">District</th>
                 <th style="text-align:center;font-size:19px;font-family:sans-serif; font-weight:bold;color:#1E88E5" class="align-middle">Area Name</th>
@@ -84,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th style="text-align:center;font-size:19px;font-family:sans-serif; font-weight:bold;color:#1E88E5" class="align-middle">Mobile</th>
                 
 
-            </tr>
+            </tr>-->
             <tr>
                 <td></td>
             </tr>

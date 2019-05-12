@@ -1,5 +1,4 @@
 
-
 @media screen and (min-width: 800px) and (max-width: 2000px){
   .btn1{
 
@@ -26,13 +25,27 @@
 		color:white;
 	}
 }
-/*@media screen and (min-width: 0px) and (max-width: 800px){	
-	*{
 
-		color:red;
-		font-size:6px;
-	}
-}*/
+#datetimepicker1 input::placeholder{
+
+	color:black;
+	font-weight:bold;
+	font-family:serif;
+}
+#datetimepicker2 input::placeholder{
+
+	
+	color:black;
+	font-weight:bold;
+	font-family:serif;
+}
+#confirm-btn{
+	background-color:rgba(250,250,254,.3);
+}
+#confirm-btn:hover{
+
+	background-color:rgba(30,130,244,.5);
+}
 
 
 
